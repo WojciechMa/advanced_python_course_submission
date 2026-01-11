@@ -1,0 +1,35 @@
+# Pipeline Configuration
+
+# Image preprocessing settings
+preprocessing:
+  target_size: [224, 224]
+  normalize_method: "zero_one"  # Options: zero_one, neg_one_one, standardize
+  augmentation: false
+
+# DICOM loading settings
+dicom:
+  supported_modalities: ["CT", "MR", "CR", "DX"]
+  batch_size: 100
+
+# Anonymization settings
+anonymization:
+  level: "strict"  # Options: strict, moderate, none
+  date_shift_days: 0
+
+# Blood test settings
+blood_tests:
+  normalize_units: true
+  add_reference_ranges: true
+  validate_values: true
+
+# Visualization settings
+visualization:
+  figure_size: [12, 8]
+  style: "seaborn-v0_8-darkgrid"
+  color_palette: "Set2"
+  output_format: "png"
+
+# Logging settings
+logging:
+  level: "INFO"
+  log_dir: "./logs"
